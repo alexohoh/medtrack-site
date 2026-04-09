@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedTrack Privacy Policy</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --accent: #58c2ad;
+  --border: #e5e5e5;
+  --code-bg: #f0f0f0;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111; --fg: #eee; --muted: #999; --border: #333; --code-bg: #222; }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+}
+h1 { font-size: 2rem; margin: 0 0 .25rem; }
+h2 { font-size: 1.3rem; margin-top: 2.25rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+p, ul, ol { margin: 0.8rem 0; }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 0.3rem 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.updated { color: var(--muted); font-style: italic; margin-bottom: 2rem; }
+.nav { margin-bottom: 2rem; }
+.nav a { font-size: 0.9rem; }
+code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+strong { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="nav"><a href="./index.html">← MedTrack</a></div>
+
+<h1>MedTrack Privacy Policy</h1>
+<p class="updated">Last updated: 7 April 2026</p>
+
+<p>MedTrack ("the app", "we", "our") is an iPhone application that helps you track medication dispensing schedules and remaining supply. This policy explains what information the app handles and how it is stored.</p>
+
+<h2>Summary</h2>
+
+<p><strong>MedTrack stores all of your data on your device.</strong> It does not have a backend, does not transmit your personal information to any server we operate, and does not use any analytics, advertising, or tracking SDKs.</p>
+
+<h2>Information we handle</h2>
+
+<h3>1. Medication data you enter</h3>
+<p>When you add a medication, MedTrack stores the following on your device:</p>
+<ul>
+  <li>Medication name and optional nickname</li>
+  <li>Dispensing quantity, unit, and refill interval</li>
+  <li>Dose schedule times and quantities</li>
+  <li>Dose log entries (time and quantity taken)</li>
+  <li>Dispense records (date, quantity, optional cost, optional explicit next-dispense date, optional note)</li>
+  <li>Notification preferences</li>
+  <li>Tracking mode (whether the medication is tracked in MedTrack or linked to Apple Health)</li>
+  <li>Pet information (name, species, breed, date of birth, weight, notes) when you use the pet tracking feature</li>
+</ul>
+
+<p>This information is stored in a private SwiftData database inside the app's sandbox container. It is included in your device's encrypted iOS backups (iCloud or local) if you have those enabled, but MedTrack itself does not sync or upload it.</p>
+
+<h3>2. Apple Health integration (optional)</h3>
+<p>If you choose to link a medication to Apple Health, MedTrack uses the iOS 26 HealthKit Medications API to read:</p>
+<ul>
+  <li>The list of medications you have explicitly granted the app access to</li>
+  <li>Dose events (scheduled and taken) for those medications</li>
+</ul>
+<p>You control which medications MedTrack can see via the standard Apple Health per-object authorization prompt. You can revoke access at any time from Settings → Health → Data Access &amp; Devices → MedTrack.</p>
+<p><strong>MedTrack does not write any data to Apple Health.</strong></p>
+
+<h3>3. Medication name lookup</h3>
+<p>When you type a medication name in the Add Medication form, MedTrack first searches a bundled list of approximately 5,000 common US medications that ships with the app. If your query doesn't match any bundled entries, MedTrack sends the query text to the U.S. National Library of Medicine's public RxNorm API (<code>rxnav.nlm.nih.gov</code>) to fetch autocomplete suggestions.</p>
+
+<p>The RxNorm API request contains:</p>
+<ul>
+  <li>The text you typed into the name field</li>
+</ul>
+
+<p>The RxNorm API request does NOT contain:</p>
+<ul>
+  <li>Your name, email, or device identifier</li>
+  <li>Any other personal information</li>
+  <li>Any other data about your medications, doses, or usage</li>
+</ul>
+
+<p>The RxNorm API is operated by the U.S. National Library of Medicine (NIH). Their terms of use: <a href="https://lhncbc.nlm.nih.gov/RxNav/TermsofService.html">https://lhncbc.nlm.nih.gov/RxNav/TermsofService.html</a></p>
+
+<h3>4. Local notifications</h3>
+<p>MedTrack schedules local notifications on your device for dose reminders, low-supply alerts, and dispense-day reminders. These notifications are generated and delivered entirely on your device by iOS. No notification data is sent to any server.</p>
+
+<h2>Information we do NOT collect</h2>
+<ul>
+  <li>We do not collect analytics, telemetry, crash reports, or usage data.</li>
+  <li>We do not use advertising networks, third-party SDKs, or trackers.</li>
+  <li>We do not collect your Apple ID, email, phone number, or contacts.</li>
+  <li>We do not collect location, photos, microphone, or camera data.</li>
+  <li>We do not have user accounts — there is nothing to log in to.</li>
+</ul>
+
+<h2>Data sharing</h2>
+<p>We do not share, sell, rent, or disclose any data to third parties. Because MedTrack does not send your data to any server we operate, there is no data for us to share.</p>
+
+<h2>Data retention and deletion</h2>
+<p>Your data stays on your device until you:</p>
+<ul>
+  <li>Delete a medication, dispense record, or dose log from within the app, or</li>
+  <li>Delete the app from your device (which removes the entire database)</li>
+</ul>
+<p>To export or review your data before deleting, you can use iOS's built-in backup mechanism.</p>
+
+<h2>Children</h2>
+<p>MedTrack is not directed to children under 13 and does not knowingly collect any information from children.</p>
+
+<h2>Security</h2>
+<p>Because data never leaves your device, the primary security boundary is your device itself. We rely on iOS's standard app sandboxing and file system encryption. If you lock your device with a passcode or biometric, your MedTrack data is encrypted at rest.</p>
+
+<h2>Changes to this policy</h2>
+<p>If we make material changes to this policy, we will update the "Last updated" date at the top. Significant changes will be called out in a release note.</p>
+
+<h2>Contact</h2>
+<p>For privacy questions or data requests, email: <a href="mailto:jog_soffit_7e@icloud.com">jog_soffit_7e@icloud.com</a></p>
+</body>
+</html>

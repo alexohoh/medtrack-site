@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedTrack Support</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --accent: #58c2ad;
+  --border: #e5e5e5;
+  --code-bg: #f0f0f0;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111; --fg: #eee; --muted: #999; --border: #333; --code-bg: #222; }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+}
+h1 { font-size: 2rem; margin: 0 0 1rem; }
+h2 { font-size: 1.3rem; margin-top: 2.25rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+h3 { font-size: 1rem; margin-top: 1.5rem; color: var(--fg); }
+p, ul, ol { margin: 0.6rem 0; }
+ul { padding-left: 1.25rem; }
+li { margin: 0.3rem 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.nav { margin-bottom: 2rem; }
+.nav a { font-size: 0.9rem; }
+code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+.contact-box {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  background: rgba(88, 194, 173, 0.05);
+}
+strong { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="nav"><a href="./index.html">← MedTrack</a></div>
+
+<h1>MedTrack Support</h1>
+
+<p>MedTrack helps you track medication dispensing schedules, dose logs, and remaining supply on your iPhone — for both yourself and your pets.</p>
+
+<h2>Contact</h2>
+
+<div class="contact-box">
+<p>For bug reports, feature requests, or general questions, email:<br>
+<strong><a href="mailto:jog_soffit_7e@icloud.com">jog_soffit_7e@icloud.com</a></strong></p>
+
+<p>Please include:</p>
+<ul>
+  <li>Your iOS version</li>
+  <li>Your iPhone model</li>
+  <li>The version of MedTrack (Settings → General → iPhone Storage → MedTrack)</li>
+  <li>A clear description of what happened and what you expected</li>
+</ul>
+</div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Why does MedTrack need access to Apple Health?</h3>
+<p>Only if you choose to track a medication via Apple Health. In that mode, MedTrack reads the dose events you log in the Health app to calculate how many doses you have remaining. You control which medications MedTrack can see via the standard Health permissions prompt, and you can revoke access at any time.</p>
+
+<h3>Does MedTrack write my doses to Apple Health?</h3>
+<p>No. The Apple Health Medications API is read-only for third-party apps. Only the Apple Health app itself can create medication dose samples.</p>
+
+<h3>Where is my data stored?</h3>
+<p>Entirely on your device. MedTrack has no server and does not sync your data to any cloud service we operate. Your data will be included in your iPhone's iOS backups if you have those enabled (iCloud or local).</p>
+
+<h3>Why does my low-supply calculation seem off?</h3>
+<p>MedTrack calculates remaining supply as <em>(total dispensed) minus (total doses taken)</em>. If you forget to log a dose, or log a dose with the wrong quantity, the calculation will be off. You can edit dose logs by tapping the row in the "Today's Doses" section on a medication's detail page.</p>
+
+<p>For medications linked to Apple Health, the calculation uses the dose events logged in Health. If you log a dose in Health and the Supply gauge doesn't update, pull down on the dashboard to refresh.</p>
+
+<h3>How do I get reminders for my doses?</h3>
+<p>Add a medication with a daily schedule — each dose time you add becomes a local notification. Make sure notifications are enabled for MedTrack in Settings → Notifications → MedTrack.</p>
+
+<h3>What is the "Next Dispense" date?</h3>
+<p>By default, MedTrack calculates the next dispense date by adding your configured refill interval to your most recent dispense. If your pharmacy has printed a specific "next available" date on your prescription, you can enter it in the Record Dispense dialog — MedTrack will use your explicit date and schedule the refill reminder for that day.</p>
+
+<h3>What is the "Track via Apple Health" option?</h3>
+<p>This is an alternative to tracking schedules and doses inside MedTrack. If you already manage a medication's schedule and reminders in the Apple Health app, you can link it in MedTrack so the supply calculation uses your Health dose logs. In this mode, MedTrack only tracks the pharmacy dispenses (Health doesn't track those); the dose schedule and reminders live in Apple Health.</p>
+
+<h3>Does MedTrack work offline?</h3>
+<p>Yes, entirely. The one exception is medication name autocomplete, which uses a bundled list of ~5,000 common medications first and then falls back to the RxNorm API when online. If you are offline and the bundled list doesn't contain your medication, just type the full name manually.</p>
+
+<h3>Can I track medications for my pets?</h3>
+<p>Yes. From the dashboard, tap the pawprint icon to manage up to 3 pets. Each pet can have its own set of medications, schedules, reminders, and dispense tracking. Apple Health linking is not available for pets — Apple Health is designed for humans only.</p>
+
+<h3>How do I delete my data?</h3>
+<p>To delete a single medication and all its records, open the medication's detail screen, tap the pencil (edit), and tap "Delete Medication" at the bottom. To delete a pet and all their medications, swipe on the pet row in the pet management screen. To delete everything, delete the app from your device — this removes the entire private database.</p>
+
+<h3>Will MedTrack be on iPad?</h3>
+<p>MedTrack is currently iPhone-only. The UI is designed for the iPhone form factor. An iPad-optimized layout may come in a future release.</p>
+
+<h2>Privacy</h2>
+<p>See the <a href="./privacy.html">privacy policy</a> for details on what data MedTrack handles and how it's stored.</p>
+</body>
+</html>
